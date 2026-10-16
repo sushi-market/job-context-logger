@@ -10,8 +10,8 @@ return [
     | to Laravel's log context.
     |
     */
-    'enabled' => true,
+    'enabled' => env('JOB_CONTEXT_LOGGER_ENABLED', true),
 
     /* The context key used for the current job details. */
-    'context_key' => 'job',
+    'context_key' => env('JOB_CONTEXT_LOGGER_CONTEXT_KEY', 'job'),
 ];

@@ -29,12 +29,12 @@ The published config/job-context-logger.php file contains:
 
 ```php
 return [
-    'enabled' => true,
-    'context_key' => 'job',
+    'enabled' => env('JOB_CONTEXT_LOGGER_ENABLED', true),
+    'context_key' => env('JOB_CONTEXT_LOGGER_CONTEXT_KEY', 'job'),
 ];
 ```
 
-Set enabled to false to disable the package. context_key controls the key under which job details are stored in Laravel's Context.
+Set `JOB_CONTEXT_LOGGER_ENABLED=false` in the application's `.env` file to disable the package. Set `JOB_CONTEXT_LOGGER_CONTEXT_KEY` to change the key under which job details are stored in Laravel's Context.
 
 ## Context fields
 
